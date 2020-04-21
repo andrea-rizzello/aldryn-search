@@ -9,7 +9,7 @@ from .utils import clean_join
 
 
 class AbstractIndex(indexes.SearchIndex):
-    text = indexes.CharField(document=True, use_template=False)
+    text = indexes.EdgeNgramField(document=True, use_template=False)
 
     def _get_backend(self, using):
         return self.get_backend(using)
